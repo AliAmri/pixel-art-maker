@@ -11,8 +11,6 @@ function makeGrid() {
   var height = document.getElementById('inputHeight').value;
   var width = document.getElementById('inputWidth').value;
 
-  // Select color input
-  var color = document.getElementById('colorPicker').value;
 
 
   // Select the table
@@ -29,9 +27,11 @@ function makeGrid() {
     var row = table.insertRow(i);
     for (var n = 0; n < width; n++){
       var cell = row.insertCell(n);
-      
+
       // change the cell's color once clicked
       cell.addEventListener("click",function(event){
+        // Select color input
+        var color = document.getElementById('colorPicker').value;
         event.target.style.backgroundColor = color;
       }
     );
